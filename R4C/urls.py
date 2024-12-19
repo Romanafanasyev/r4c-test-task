@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from robots.views import RobotCreateView
+from robots.views import RobotCreateView, WeeklyProductionSummaryView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/robots/', RobotCreateView.as_view(), name='robot-create'),
+    path('api/robots/weekly-summary/', WeeklyProductionSummaryView.as_view(), name='weekly-production-summary'),
 ]
